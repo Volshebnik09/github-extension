@@ -8,7 +8,7 @@ This extension fixes this issue.
 
 just click this button
 
-![alt text](https://github.com/Volshebnik09/github-ext/blob/main/readme/preview.png?raw=true)
+![alt text](https://github.com/Volshebnik09/github-extension/blob/main/readme/preview.png?raw=true)
 
 ## How to install
 
