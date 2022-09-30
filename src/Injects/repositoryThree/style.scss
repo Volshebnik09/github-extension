@@ -1,6 +1,11 @@
 html{
     min-height: 100vh;
     transition: 0.5s;
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
     .repositoryThree{
         height: 100vh;
         position: fixed;
@@ -12,7 +17,7 @@ html{
         backdrop-filter: blur(2px);
         box-shadow: #00000000 5px -3px 13px;
         transition: 0.5s;
-
+        padding: 15px 10px;
         &:before{
             content: "";
             position: absolute;
@@ -54,6 +59,7 @@ html{
             &:after{
                 opacity: 0;
                 right: 260px;
+                transition: 0.2s;
             }
         }
         &.fixed{
@@ -71,6 +77,89 @@ html{
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                height: 28px;
+
+            }
+        }
+        &__body{
+            width: 100%;
+            margin: auto;
+            background: #0000003b;
+            box-shadow: 7px 7px 9px -4px inset black;
+            height: calc(100% - 68px );
+            padding: 10px;
+            ul{
+                list-style: none;
+                padding-left: 10px;
+                position: relative;
+                &:before{
+                    content: '';
+                    left: -5px;
+                    position: absolute;
+                    top:-10px;
+                    height: 100%;
+                    width: 2px;
+                    background: white;
+                    z-index: 9;
+                }
+                &:nth-child(1){
+                    &:before{
+                        content: '';
+                        left: -5px;
+                        position: absolute;
+                        top:-10px;
+                        height: 0%;
+                        width: 2px;
+                        background: white;
+                        z-index: 9;
+                    }
+                }
+                li{
+                    cursor: pointer;
+                    user-select: none;
+                    width: 100%;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                    list-style: none;
+                    position: relative;
+                    z-index: 10;
+                    min-height: 20px;
+                    transition: 0.5s;
+
+                    &:before{
+                        content: '';
+                        left: -5px;
+                        position: absolute;
+                        top:-10px;
+                        height: 100%;
+                        width: 2px;
+                        background: white;
+                        z-index: 9;
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        left: -5px;
+                        top:9px;
+                        height: 2px;
+                        width: 5px;
+                        background: white;
+                        z-index: 9;
+                    }
+                    &:nth-child(1){
+                        &:before{
+                            content: '';
+                            left: -5px;
+                            position: absolute;
+                            top:0px;
+                            height: calc(100% - 10px);
+                            width: 2px;
+                            background: white;
+                            z-index: 9;
+                        }
+                    }
+
+                }
             }
         }
     }
