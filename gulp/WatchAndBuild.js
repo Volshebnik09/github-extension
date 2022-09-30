@@ -13,7 +13,7 @@ function buildPug () {
         .pipe(
             pug({
                 pretty:true,
-                data: require('../../charity/src/base/data/data.json')
+                // data: require('../src/base/data/data.json')
             })
         )
 
@@ -70,7 +70,7 @@ function buildJS() {
 }
 
 function copyPublic() {
-    return src('../public/**/*.*')
+    return src('../src/public/**/*.*')
         .pipe(dest(path.distPath))
 }
 exports.default= (cb) =>{
@@ -84,7 +84,7 @@ exports.default= (cb) =>{
     watch(path.srcPath + '/**/*.scss',buildCSS);
     watch(path.srcPath +'/**/*.{png,jpeg}',transformPicture);
     watch(path.srcPath +'/**/*.{png,jpeg,ico}',copyOtherImg);
-    watch('../public/**/*.*', copyPublic);
+    watch('../src/public/**/*.*', copyPublic);
     // watch(path.srcPath + '/**/*.js', buildJS)
     cb();
 }

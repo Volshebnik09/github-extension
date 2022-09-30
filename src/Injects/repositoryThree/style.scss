@@ -1,0 +1,77 @@
+html{
+    min-height: 100vh;
+    transition: 0.5s;
+    .repositoryThree{
+        height: 100vh;
+        position: fixed;
+        left:-300px;
+        right: 0;
+        width: 300px;
+        z-index: 1000;
+        background: #0d1117e0;
+        backdrop-filter: blur(2px);
+        box-shadow: #00000000 5px -3px 13px;
+        transition: 0.5s;
+
+        &:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -10px;
+            height: 100vh;
+            width: 10px;
+        }
+        &:after{
+            z-index: 998;
+            content: "Three View";
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            height: 100px;
+            width: 40px;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            display: flex;
+            border-bottom-right-radius: 20px;
+            border-top-right-radius: 20px;
+            color: white;
+            border-right: 1px rgba(255, 255, 255, 0.76) solid;
+            border-top: 1px rgba(255, 255, 255, 0.76) solid;
+            border-bottom: 1px rgba(255, 255, 255, 0.76) solid;
+            font-size: 18px;
+            padding: 10px 0;
+            opacity: 1;
+            background: #0d1117e0;
+            backdrop-filter: blur(2px);
+            box-shadow: #00000000 5px -3px 13px;
+            transition: 0.5s;
+        }
+        &:hover{
+            left:0;
+            box-shadow: #00000059 5px -3px 13px;
+            &:after{
+                opacity: 0;
+                right: 260px;
+            }
+        }
+        &.fixed{
+            left: 0;
+            box-shadow: #00000059 5px -3px 13px;
+            &:after{
+                opacity: 0;
+            }
+        }
+        &__header{
+            &__title{
+                text-align: center;
+                margin: 20px;
+                font-size: 24px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

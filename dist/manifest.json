@@ -1,0 +1,31 @@
+{
+  "name": "Name",
+  "description": "description",
+  "version": "1.0",
+  "manifest_version": 3,
+  "host_permissions": ["<all_urls>"],
+
+  "permissions": ["activeTab", "scripting","storage"],
+  "icons": {
+     "32": "/images/GitHub-Mark-Light-32px.png",
+     "48": "/images/GitHub-Mark-Light-64px.png",
+     "128": "/images/GitHub-Mark-Light-120px-plus.png"
+  },
+  "action": {
+    "default_icon": {
+       "32": "/images/GitHub-Mark-Light-32px.png",
+       "48": "/images/GitHub-Mark-Light-64px.png",
+       "128": "/images/GitHub-Mark-Light-120px-plus.png"
+    },
+    "default_popup": "index.html"
+  },
+  "content_scripts":
+  [
+    {
+      "matches":["https://github.com/*"],
+      "js":["scripts/bootstrap.bundle.js","scripts/vendors.bundle.js"],
+      "run_at": "document_end"
+    }
+  ]
+
+}
