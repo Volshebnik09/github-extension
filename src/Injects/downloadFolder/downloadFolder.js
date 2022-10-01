@@ -33,8 +33,9 @@ const createDownloadBtn = async ()=>{
     await $('#repo-content-turbo-frame > div > div > div.file-navigation.mb-3.d-flex.flex-items-start > div.d-flex')
         .prepend('<button class="ext-download-folder-btn">Download</button>')
 
+    if ($('#style-download-folder-btn').length < 1)
     $('head').prepend(`
-<style type="text/css"> 
+<style type="text/css" id="style-download-folder-btn"> 
     .ext-download-folder-btn{
         text-decoration: none;
         background: #21262d; 

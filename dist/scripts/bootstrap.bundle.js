@@ -2,6 +2,45 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "../src/Injects/clearInjections.js":
+/*!*****************************************!*\
+  !*** ../src/Injects/clearInjections.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _default; }
+/* harmony export */ });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+
+
+var _default = /*#__PURE__*/function () {
+  function _default() {
+    _classCallCheck(this, _default);
+  }
+
+  _createClass(_default, [{
+    key: "inject",
+    value: function inject() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').removeClass('repositoryThree-pinned'); // console.log(123)
+    }
+  }]);
+
+  return _default;
+}();
+
+
+
+/***/ }),
+
 /***/ "../src/Injects/downloadFolder/downloadFolder.js":
 /*!*******************************************************!*\
   !*** ../src/Injects/downloadFolder/downloadFolder.js ***!
@@ -63,7 +102,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return jquery__WEBPACK_IMPORTED_MODULE_0___default()('#repo-content-turbo-frame > div > div > div.file-navigation.mb-3.d-flex.flex-items-start > div.d-flex').prepend('<button class="ext-download-folder-btn">Download</button>');
 
             case 4:
-              jquery__WEBPACK_IMPORTED_MODULE_0___default()('head').prepend("\n<style type=\"text/css\"> \n    .ext-download-folder-btn{\n        text-decoration: none;\n        background: #21262d; \n        border-radius: 5px;\n        border: 1px solid;\n        font-weight: 500;\n        color: var(--color-btn-text);\n        border-color: var(--color-btn-border);\n        transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);\n        transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);\n        height: 100%;\n        margin-right: 8px;\n        padding: 5px 16px;\n        min-width: 100px;\n        cursor: pointer;\n        font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\";\n    }\n     .ext-download-folder-btn:hover{\n         text-decoration: none;\n         background: #30363d;\n         border-color: var(--color-btn-hover-border);\n     }\n     .ext-download-folder-btn:disabled{\n         text-decoration: none;\n         background: black;\n         border-color: var(--color-btn-hover-border);\n     }\n</style>");
+              if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#style-download-folder-btn').length < 1) jquery__WEBPACK_IMPORTED_MODULE_0___default()('head').prepend("\n<style type=\"text/css\" id=\"style-download-folder-btn\"> \n    .ext-download-folder-btn{\n        text-decoration: none;\n        background: #21262d; \n        border-radius: 5px;\n        border: 1px solid;\n        font-weight: 500;\n        color: var(--color-btn-text);\n        border-color: var(--color-btn-border);\n        transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);\n        transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);\n        height: 100%;\n        margin-right: 8px;\n        padding: 5px 16px;\n        min-width: 100px;\n        cursor: pointer;\n        font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\";\n    }\n     .ext-download-folder-btn:hover{\n         text-decoration: none;\n         background: #30363d;\n         border-color: var(--color-btn-hover-border);\n     }\n     .ext-download-folder-btn:disabled{\n         text-decoration: none;\n         background: black;\n         border-color: var(--color-btn-hover-border);\n     }\n</style>");
               jquery__WEBPACK_IMPORTED_MODULE_0___default()('.ext-download-folder-btn').click(function () {
                 var _archiveName$innerTex;
 
@@ -315,23 +354,15 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-
-var folder = /*#__PURE__*/_createClass(function folder(name) {
-  _classCallCheck(this, folder);
-
-  _defineProperty(this, "name", void 0);
-
-  this.name = name;
-});
 
 var _default = /*#__PURE__*/function () {
   function _default() {
@@ -344,154 +375,160 @@ var _default = /*#__PURE__*/function () {
     _defineProperty(this, "deep", 0);
 
     _defineProperty(this, "toView", []);
+
+    _defineProperty(this, "maxDeep", 100);
+
+    _defineProperty(this, "deepAlerted", false);
+
+    this.checkurl();
   }
 
   _createClass(_default, [{
+    key: "uuidv4",
+    value: function uuidv4() {
+      return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+        return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
+      });
+    }
+  }, {
     key: "setup",
     value: function setup() {
       this.title = window.location.toString().split('/')[4];
       this.url = window.location.toString().split('/').slice(0, 5).join('/');
+      this.deep = 0;
+    }
+  }, {
+    key: "checkThisIsRepo",
+    value: function checkThisIsRepo() {
+      var header = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#repository-container-header');
+
+      if (!header.length) {
+        return false;
+      }
+
+      return true;
     }
   }, {
     key: "getFolderOfFileInBlob",
-    value: function () {
-      var _getFolderOfFileInBlob = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(blob) {
-        var _this = this;
+    value: function getFolderOfFileInBlob(blob) {
+      var _this = this;
 
-        var href,
-            toReturn,
-            _args4 = arguments;
-        return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                href = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : '';
+      var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-                if (!(this.deep > 100)) {
-                  _context4.next = 3;
-                  break;
-                }
+      if (this.deep > this.maxDeep) {
+        if (!this.deepAlerted) {
+          alert("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435 \u043A\u043E\u043B-\u0432\u043E \u043F\u0430\u043F\u043E\u043A ".concat(this.maxDeep));
+          this.deepAlerted = true;
+        }
 
-                return _context4.abrupt("return", '');
-
-              case 3:
-                toReturn = "";
-                _context4.next = 6;
-                return blob.text().then( /*#__PURE__*/function () {
-                  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(html) {
-                    var ob, links;
-                    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-                      while (1) {
-                        switch (_context3.prev = _context3.next) {
-                          case 0:
-                            ob = document.createElement('html');
-                            ob.innerHTML = html;
-                            links = jquery__WEBPACK_IMPORTED_MODULE_0___default()(ob).find('.js-details-container .Box-row'); // links = links.filter((link)=> { link.childElementCount < 4})
-
-                            links = links.filter(function (index, el) {
-                              return el.childElementCount === 4;
-                            });
-                            _this.toView = _this.toView.filter(function (el) {
-                              return el !== href;
-                            });
-                            jquery__WEBPACK_IMPORTED_MODULE_0___default().each(links, /*#__PURE__*/function () {
-                              var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(index) {
-                                var title, href, svg;
-                                return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-                                  while (1) {
-                                    switch (_context2.prev = _context2.next) {
-                                      case 0:
-                                        title = jquery__WEBPACK_IMPORTED_MODULE_0___default()(links[index]).find('a').first()[0].innerText;
-                                        href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(links[index]).find('a').first()[0].href;
-                                        svg = jquery__WEBPACK_IMPORTED_MODULE_0___default()(links[index]).find('svg').first()[0];
-
-                                        if (title.split('.').filter(function (el) {
-                                          return el.length > 0;
-                                        }).length < 2) {
-                                          _this.toView.push(href);
-
-                                          fetch(href, {
-                                            headers: {
-                                              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-                                            }
-                                          }).then(function (res) {
-                                            return res.blob();
-                                          }).then( /*#__PURE__*/function () {
-                                            var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(blob) {
-                                              return _regeneratorRuntime().wrap(function _callee$(_context) {
-                                                while (1) {
-                                                  switch (_context.prev = _context.next) {
-                                                    case 0:
-                                                      console.log(href);
-                                                      _context.t0 = toReturn;
-                                                      _context.t1 = "\n                                    <li>\n                                        ".concat(_this.convertHtmlToString(svg), "\n                                              ").concat(title, "\n                                        <ul>\n                                            ");
-                                                      _context.next = 5;
-                                                      return _this.getFolderOfFileInBlob(blob);
-
-                                                    case 5:
-                                                      _context.t2 = _context.sent;
-                                                      toReturn = _context.t0 += _context.t1.concat.call(_context.t1, _context.t2, "\n                                        </ul>\n                                    </li>\n                                ");
-
-                                                    case 7:
-                                                    case "end":
-                                                      return _context.stop();
-                                                  }
-                                                }
-                                              }, _callee);
-                                            }));
-
-                                            return function (_x4) {
-                                              return _ref3.apply(this, arguments);
-                                            };
-                                          }());
-                                        } else {
-                                          toReturn += "\n                            <li>\n                                ".concat(_this.convertHtmlToString(svg), "\n                                    <a href=\"").concat(href, "\">\n                                                   ").concat(title, "\n                                    </a>\n                            </li>\n                        ");
-                                        }
-
-                                      case 4:
-                                      case "end":
-                                        return _context2.stop();
-                                    }
-                                  }
-                                }, _callee2);
-                              }));
-
-                              return function (_x3) {
-                                return _ref2.apply(this, arguments);
-                              };
-                            }());
-
-                          case 6:
-                          case "end":
-                            return _context3.stop();
-                        }
-                      }
-                    }, _callee3);
-                  }));
-
-                  return function (_x2) {
-                    return _ref.apply(this, arguments);
-                  };
-                }());
-
-              case 6:
-                this.deep += 1;
-                return _context4.abrupt("return", toReturn);
-
-              case 8:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4, this);
-      }));
-
-      function getFolderOfFileInBlob(_x) {
-        return _getFolderOfFileInBlob.apply(this, arguments);
+        this.deep++;
+        return '';
       }
 
-      return getFolderOfFileInBlob;
-    }()
+      var toReturn = "";
+      blob.text().then( /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(html) {
+          var ob, links;
+          return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  ob = document.createElement('html');
+                  ob.innerHTML = html;
+                  links = jquery__WEBPACK_IMPORTED_MODULE_0___default()(ob).find('.js-details-container .Box-row'); // links = links.filter((link)=> { link.childElementCount < 4})
+
+                  links = links.filter(function (index, el) {
+                    return el.childElementCount === 4;
+                  });
+                  jquery__WEBPACK_IMPORTED_MODULE_0___default().each(links, /*#__PURE__*/function () {
+                    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(index) {
+                      var title, href, svg, id;
+                      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+                        while (1) {
+                          switch (_context2.prev = _context2.next) {
+                            case 0:
+                              title = jquery__WEBPACK_IMPORTED_MODULE_0___default()(links[index]).find('a').first()[0].innerText;
+
+                              if (!(title === '')) {
+                                _context2.next = 3;
+                                break;
+                              }
+
+                              return _context2.abrupt("return");
+
+                            case 3:
+                              href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(links[index]).find('a').first()[0].href;
+                              svg = jquery__WEBPACK_IMPORTED_MODULE_0___default()(links[index]).find('svg').first()[0];
+
+                              if (title.split('.').filter(function (el) {
+                                return el.length > 0;
+                              }).length < 2) {
+                                _this.deep += 1;
+                                id = _this.uuidv4();
+                                toReturn = "\n                                    <li id=\"".concat(id, "-parent\">\n                                        <a href=\"").concat(href, "\" class=\"folder\">\n                                        ").concat(_this.convertHtmlToString(svg), "\n                                        </a>\n                                              ").concat(title, "\n                                        <ul id=\"").concat(id, "\">\n\n                                        </ul>\n                                    </li>\n                                ");
+                                jquery__WEBPACK_IMPORTED_MODULE_0___default()(parent).append(toReturn);
+                                jquery__WEBPACK_IMPORTED_MODULE_0___default()('#' + id + '-parent').click(function (e) {
+                                  e.stopPropagation();
+                                  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#' + id + '-parent').toggleClass('active');
+                                });
+                                fetch(href, {
+                                  headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                                  }
+                                }).then(function (res) {
+                                  return res.blob();
+                                }).then( /*#__PURE__*/function () {
+                                  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(blob) {
+                                    return _regeneratorRuntime().wrap(function _callee$(_context) {
+                                      while (1) {
+                                        switch (_context.prev = _context.next) {
+                                          case 0:
+                                            _this.getFolderOfFileInBlob(blob, '#' + id);
+
+                                          case 1:
+                                          case "end":
+                                            return _context.stop();
+                                        }
+                                      }
+                                    }, _callee);
+                                  }));
+
+                                  return function (_x3) {
+                                    return _ref3.apply(this, arguments);
+                                  };
+                                }());
+                              } else {
+                                toReturn = "\n                            <li>\n                                ".concat(_this.convertHtmlToString(svg), "\n                                    <a href=\"").concat(href, "\">\n                                                   ").concat(title, "\n                                    </a>\n                            </li>\n                        ");
+                                jquery__WEBPACK_IMPORTED_MODULE_0___default()(parent).append(toReturn);
+                              }
+
+                            case 6:
+                            case "end":
+                              return _context2.stop();
+                          }
+                        }
+                      }, _callee2);
+                    }));
+
+                    return function (_x2) {
+                      return _ref2.apply(this, arguments);
+                    };
+                  }());
+
+                case 5:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3);
+        }));
+
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }());
+      return 1;
+    }
   }, {
     key: "convertHtmlToString",
     value: function convertHtmlToString(DOMObject) {
@@ -501,12 +538,39 @@ var _default = /*#__PURE__*/function () {
     }
   }, {
     key: "proceed",
-    value: function proceed() {}
+    value: function proceed() {
+      var _this2 = this;
+
+      if (localStorage.getItem('repositoryThree-pinned') === 'true') {
+        this.pin();
+      }
+
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree .settings .pin').click(function () {
+        _this2.togglePin();
+      });
+    }
+  }, {
+    key: "togglePin",
+    value: function togglePin() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree .settings .pin').toggleClass('pinned');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree').toggleClass('pinned');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').toggleClass('repositoryThree-pinned');
+      localStorage.setItem('repositoryThree-pinned', jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree').hasClass('pinned'));
+    }
+  }, {
+    key: "pin",
+    value: function pin() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree .settings .pin').addClass('pinned');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree').addClass('pinned');
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').addClass('repositoryThree-pinned');
+      localStorage.setItem('repositoryThree-pinned', true);
+    }
   }, {
     key: "inject",
     value: function inject() {
-      var _this2 = this;
+      var _this3 = this;
 
+      if (!this.checkThisIsRepo()) return;
       this.setup();
 
       __webpack_require__(/*! ./style.scss */ "../src/Injects/repositoryThree/style.scss");
@@ -518,41 +582,60 @@ var _default = /*#__PURE__*/function () {
       }).then(function (res) {
         return res.blob();
       }).then( /*#__PURE__*/function () {
-        var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(blob) {
+        var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(blob) {
           var repositoryThree;
-          return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+          return _regeneratorRuntime().wrap(function _callee4$(_context4) {
             while (1) {
-              switch (_context5.prev = _context5.next) {
+              switch (_context4.prev = _context4.next) {
                 case 0:
-                  _context5.t0 = (jquery__WEBPACK_IMPORTED_MODULE_0___default());
-                  _context5.t1 = "\n                <div class=\"repositoryThree\">\n                    <div class=\"repositoryThree__header\">\n                         <div class=\"repositoryThree__header__title\">\n                            ".concat(_this2.title, "\n                         </div>\n                    </div>\n                    <div class=\"repositoryThree__body\">\n                        <ul>\n                            ");
-                  _context5.next = 4;
-                  return _this2.getFolderOfFileInBlob(blob);
+                  repositoryThree = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n                <div class=\"repositoryThree\">\n                <div class=\"settings\">\n                    <div class=\"pin\">\n                        <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                        <g clip-path=\"url(#clip0_1_2)\">\n                        <path d=\"M4.146 0.146C4.19252 0.099598 4.24773 0.0628199 4.30847 0.0377682C4.36921 0.0127165 4.4343 -0.000117503 4.5 -1.56181e-07H11.5C11.6326 -1.56181e-07 11.7598 0.0526783 11.8536 0.146446C11.9473 0.240215 12 0.367392 12 0.5C12 1.18 11.658 1.674 11.354 1.979C11.228 2.104 11.104 2.203 11 2.277V6.708L11.078 6.756C11.281 6.883 11.554 7.07 11.829 7.311C12.36 7.775 13 8.527 13 9.5C13 9.63261 12.9473 9.75979 12.8536 9.85355C12.7598 9.94732 12.6326 10 12.5 10H8.5V14.5C8.5 14.776 8.276 16 8 16C7.724 16 7.5 14.776 7.5 14.5V10H3.5C3.36739 10 3.24021 9.94732 3.14645 9.85355C3.05268 9.75979 3 9.63261 3 9.5C3 8.527 3.64 7.775 4.17 7.311C4.4287 7.08636 4.70641 6.88461 5 6.708V2.277C4.8739 2.18771 4.75548 2.08803 4.646 1.979C4.342 1.674 4 1.179 4 0.5C3.99988 0.434295 4.01272 0.369211 4.03777 0.308469C4.06282 0.247728 4.0996 0.192519 4.146 0.146V0.146ZM5.726 1.554L5.724 1.553L5.726 1.554ZM5.724 1.553L5.726 1.554C5.80842 1.59576 5.87766 1.65955 5.92603 1.73828C5.97439 1.81701 6 1.9076 6 2V7C6 7.09278 5.97418 7.18373 5.92544 7.26267C5.87669 7.34161 5.80695 7.40544 5.724 7.447H5.722L5.71 7.454L5.656 7.484C5.36117 7.64846 5.08405 7.84282 4.829 8.064C4.511 8.342 4.244 8.66 4.104 9H11.896C11.756 8.66 11.489 8.342 11.171 8.064C10.9004 7.82917 10.605 7.62462 10.29 7.454L10.278 7.448H10.276C10.1929 7.40636 10.1231 7.34238 10.0743 7.26324C10.0255 7.18411 9.99982 7.09295 10 7V2C9.99962 1.90331 10.0273 1.80858 10.0796 1.72729C10.132 1.64601 10.2068 1.58164 10.295 1.542C10.4229 1.46669 10.5408 1.37565 10.646 1.271C10.726 1.191 10.801 1.101 10.86 1H5.14C5.2 1.1 5.273 1.191 5.354 1.271C5.46447 1.38078 5.58886 1.47559 5.724 1.553Z\"/>\n                        </g>\n                        <defs>\n                        <clipPath id=\"clip0_1_2\">\n                        <rect width=\"16\" height=\"16\"/>\n                        </clipPath>\n                        </defs>\n                        </svg>\n                    </div>\n                </div>\n                    <div class=\"repositoryThree__header\">\n                         <div class=\"repositoryThree__header__title\">\n                            ".concat(_this3.title, "\n                         </div>\n                         <input id=\"repositoryThree__search\" type=\"text\" placeholder=\"search\"/>\n                    </div>\n                    <div class=\"repositoryThree__body\">\n                        <ul id=\"main-ul-repositoryThree\">\n                        </ul>\n                    </div>\n                </div>\n                "));
 
-                case 4:
-                  _context5.t2 = _context5.sent;
-                  _context5.t3 = _context5.t1.concat.call(_context5.t1, _context5.t2, "\n                        </ul>\n                    </div>\n                </div>\n                ");
-                  _context5.next = 8;
-                  return (0, _context5.t0)(_context5.t3);
+                  _this3.getFolderOfFileInBlob(blob, '#main-ul-repositoryThree');
 
-                case 8:
-                  repositoryThree = _context5.sent;
-                  setTimeout(function () {
-                    jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').prepend(repositoryThree);
-                  }, 10000);
+                  jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').prepend(repositoryThree);
+                  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#repositoryThree__search').on('input', function (e) {
+                    var value = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#repositoryThree__search').val();
+                    var liys = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree__body li');
+                    jquery__WEBPACK_IMPORTED_MODULE_0___default().each(liys, function (index) {
+                      var text = liys[index].innerText;
+                      var li = liys[index];
 
-                case 10:
+                      if (text.includes(value)) {
+                        jquery__WEBPACK_IMPORTED_MODULE_0___default()(li).removeClass('hiddenBySearch');
+                      } else {
+                        jquery__WEBPACK_IMPORTED_MODULE_0___default()(li).addClass('hiddenBySearch');
+                      }
+                    });
+                  });
+
+                  _this3.proceed();
+
+                case 5:
                 case "end":
-                  return _context5.stop();
+                  return _context4.stop();
               }
             }
-          }, _callee5);
+          }, _callee4);
         }));
 
-        return function (_x5) {
+        return function (_x4) {
           return _ref4.apply(this, arguments);
         };
       }());
+    }
+  }, {
+    key: "checkurl",
+    value: function checkurl() {
+      var _this4 = this;
+
+      if (window.location.toString().split('/').slice(0, 5).join('/') !== this.url) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.repositoryThree').remove();
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').removeClass('repositoryThree-pinned');
+      }
+
+      setTimeout(function () {
+        _this4.checkurl();
+      }, 1000);
     }
   }]);
 
@@ -680,7 +763,8 @@ var _default = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Injects_testInjection_testInjection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Injects/testInjection/testInjection.js */ "../src/Injects/testInjection/testInjection.js");
 /* harmony import */ var _Injects_repositoryThree_repositoryThree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Injects/repositoryThree/repositoryThree */ "../src/Injects/repositoryThree/repositoryThree.js");
-/* harmony import */ var _Router_Router_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Router/Router.js */ "../src/Router/Router.js");
+/* harmony import */ var _Injects_clearInjections__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Injects/clearInjections */ "../src/Injects/clearInjections.js");
+/* harmony import */ var _Router_Router_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Router/Router.js */ "../src/Router/Router.js");
 //  old ext
 __webpack_require__(/*! ./Injects/downloadFolder/downloadFolder.js */ "../src/Injects/downloadFolder/downloadFolder.js"); // new ext
 
@@ -688,7 +772,9 @@ __webpack_require__(/*! ./Injects/downloadFolder/downloadFolder.js */ "../src/In
 
 
 
-var router = new _Router_Router_js__WEBPACK_IMPORTED_MODULE_2__["default"](); // github.com/*/*
+
+var router = new _Router_Router_js__WEBPACK_IMPORTED_MODULE_3__["default"]();
+router.set('github\.com.+', [new _Injects_clearInjections__WEBPACK_IMPORTED_MODULE_2__["default"]()]); // github.com/*/*
 
 router.set('github\.com\/.+\/[\-\a-z_0-9]+'); // github.com/*/**
 
@@ -715,7 +801,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n  min-height: 100vh;\n  transition: 0.5s;\n}\nhtml * {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\nhtml .repositoryThree {\n  height: 100vh;\n  position: fixed;\n  left: -300px;\n  right: 0;\n  width: 300px;\n  z-index: 1000;\n  background: rgba(13, 17, 23, 0.8784313725);\n  backdrop-filter: blur(2px);\n  box-shadow: rgba(0, 0, 0, 0) 5px -3px 13px;\n  transition: 0.5s;\n  padding: 15px 10px;\n}\nhtml .repositoryThree:before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  right: -10px;\n  height: 100vh;\n  width: 10px;\n}\nhtml .repositoryThree:after {\n  z-index: 998;\n  content: \"Three View\";\n  position: absolute;\n  top: 50%;\n  right: -40px;\n  height: 100px;\n  width: 40px;\n  align-items: center;\n  justify-content: center;\n  transform: translateY(-50%);\n  writing-mode: vertical-rl;\n  display: flex;\n  border-bottom-right-radius: 20px;\n  border-top-right-radius: 20px;\n  color: white;\n  border-right: 1px rgba(255, 255, 255, 0.76) solid;\n  border-top: 1px rgba(255, 255, 255, 0.76) solid;\n  border-bottom: 1px rgba(255, 255, 255, 0.76) solid;\n  font-size: 18px;\n  padding: 10px 0;\n  opacity: 1;\n  background: rgba(13, 17, 23, 0.8784313725);\n  backdrop-filter: blur(2px);\n  box-shadow: rgba(0, 0, 0, 0) 5px -3px 13px;\n  transition: 0.5s;\n}\nhtml .repositoryThree:hover {\n  left: 0;\n  box-shadow: rgba(0, 0, 0, 0.3490196078) 5px -3px 13px;\n}\nhtml .repositoryThree:hover:after {\n  opacity: 0;\n  right: 260px;\n  transition: 0.2s;\n}\nhtml .repositoryThree.fixed {\n  left: 0;\n  box-shadow: rgba(0, 0, 0, 0.3490196078) 5px -3px 13px;\n}\nhtml .repositoryThree.fixed:after {\n  opacity: 0;\n}\nhtml .repositoryThree__header__title {\n  text-align: center;\n  margin: 20px;\n  font-size: 24px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  height: 28px;\n}\nhtml .repositoryThree__body {\n  width: 100%;\n  margin: auto;\n  background: rgba(0, 0, 0, 0.231372549);\n  box-shadow: 7px 7px 9px -4px inset black;\n  height: calc(100% - 68px);\n  padding: 10px;\n}\nhtml .repositoryThree__body ul {\n  list-style: none;\n  padding-left: 10px;\n  position: relative;\n}\nhtml .repositoryThree__body ul:before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: -10px;\n  height: 100%;\n  width: 2px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul:nth-child(1):before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: -10px;\n  height: 0%;\n  width: 2px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul li {\n  cursor: pointer;\n  user-select: none;\n  width: 100%;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  list-style: none;\n  position: relative;\n  z-index: 10;\n  min-height: 20px;\n  transition: 0.5s;\n}\nhtml .repositoryThree__body ul li:before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: -10px;\n  height: 100%;\n  width: 2px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul li:after {\n  content: \"\";\n  position: absolute;\n  left: -5px;\n  top: 9px;\n  height: 2px;\n  width: 5px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul li:nth-child(1):before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: 0px;\n  height: calc(100% - 10px);\n  width: 2px;\n  background: white;\n  z-index: 9;\n}", "",{"version":3,"sources":["webpack://./../src/Injects/repositoryThree/style.scss"],"names":[],"mappings":"AAAA;EACI,iBAAA;EACA,gBAAA;AACJ;AAAI;EACI,sBAAA;EACA,SAAA;EACA,UAAA;AAER;AAAI;EACI,aAAA;EACA,eAAA;EACA,YAAA;EACA,QAAA;EACA,YAAA;EACA,aAAA;EACA,0CAAA;EACA,0BAAA;EACA,0CAAA;EACA,gBAAA;EACA,kBAAA;AAER;AADQ;EACI,WAAA;EACA,kBAAA;EACA,MAAA;EACA,YAAA;EACA,aAAA;EACA,WAAA;AAGZ;AADQ;EACI,YAAA;EACA,qBAAA;EACA,kBAAA;EACA,QAAA;EACA,YAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,2BAAA;EACA,yBAAA;EACA,aAAA;EACA,gCAAA;EACA,6BAAA;EACA,YAAA;EACA,iDAAA;EACA,+CAAA;EACA,kDAAA;EACA,eAAA;EACA,eAAA;EACA,UAAA;EACA,0CAAA;EACA,0BAAA;EACA,0CAAA;EACA,gBAAA;AAGZ;AADQ;EACI,OAAA;EACA,qDAAA;AAGZ;AAFY;EACI,UAAA;EACA,YAAA;EACA,gBAAA;AAIhB;AADQ;EACI,OAAA;EACA,qDAAA;AAGZ;AAFY;EACI,UAAA;AAIhB;AAAY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,YAAA;AAEhB;AAEQ;EACI,WAAA;EACA,YAAA;EACA,sCAAA;EACA,wCAAA;EACA,yBAAA;EACA,aAAA;AAAZ;AACY;EACI,gBAAA;EACA,kBAAA;EACA,kBAAA;AAChB;AAAgB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,UAAA;EACA,YAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAEpB;AACoB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,UAAA;EACA,UAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AACxB;AAEgB;EACI,eAAA;EACA,iBAAA;EACA,WAAA;EACA,iBAAA;EACA,mBAAA;EACA,gBAAA;EACA,kBAAA;EACA,WAAA;EACA,gBAAA;EACA,gBAAA;AAApB;AAEoB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,UAAA;EACA,YAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAAxB;AAEoB;EACI,WAAA;EACA,kBAAA;EACA,UAAA;EACA,QAAA;EACA,WAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAAxB;AAGwB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,QAAA;EACA,yBAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAD5B","sourcesContent":["html{\r\n    min-height: 100vh;\r\n    transition: 0.5s;\r\n    *{\r\n        box-sizing: border-box;\r\n        margin: 0;\r\n        padding: 0;\r\n    }\r\n    .repositoryThree{\r\n        height: 100vh;\r\n        position: fixed;\r\n        left:-300px;\r\n        right: 0;\r\n        width: 300px;\r\n        z-index: 1000;\r\n        background: #0d1117e0;\r\n        backdrop-filter: blur(2px);\r\n        box-shadow: #00000000 5px -3px 13px;\r\n        transition: 0.5s;\r\n        padding: 15px 10px;\r\n        &:before{\r\n            content: \"\";\r\n            position: absolute;\r\n            top: 0;\r\n            right: -10px;\r\n            height: 100vh;\r\n            width: 10px;\r\n        }\r\n        &:after{\r\n            z-index: 998;\r\n            content: \"Three View\";\r\n            position: absolute;\r\n            top: 50%;\r\n            right: -40px;\r\n            height: 100px;\r\n            width: 40px;\r\n            align-items: center;\r\n            justify-content: center;\r\n            transform: translateY(-50%);\r\n            writing-mode: vertical-rl;\r\n            display: flex;\r\n            border-bottom-right-radius: 20px;\r\n            border-top-right-radius: 20px;\r\n            color: white;\r\n            border-right: 1px rgba(255, 255, 255, 0.76) solid;\r\n            border-top: 1px rgba(255, 255, 255, 0.76) solid;\r\n            border-bottom: 1px rgba(255, 255, 255, 0.76) solid;\r\n            font-size: 18px;\r\n            padding: 10px 0;\r\n            opacity: 1;\r\n            background: #0d1117e0;\r\n            backdrop-filter: blur(2px);\r\n            box-shadow: #00000000 5px -3px 13px;\r\n            transition: 0.5s;\r\n        }\r\n        &:hover{\r\n            left:0;\r\n            box-shadow: #00000059 5px -3px 13px;\r\n            &:after{\r\n                opacity: 0;\r\n                right: 260px;\r\n                transition: 0.2s;\r\n            }\r\n        }\r\n        &.fixed{\r\n            left: 0;\r\n            box-shadow: #00000059 5px -3px 13px;\r\n            &:after{\r\n                opacity: 0;\r\n            }\r\n        }\r\n        &__header{\r\n            &__title{\r\n                text-align: center;\r\n                margin: 20px;\r\n                font-size: 24px;\r\n                white-space: nowrap;\r\n                overflow: hidden;\r\n                text-overflow: ellipsis;\r\n                height: 28px;\r\n\r\n            }\r\n        }\r\n        &__body{\r\n            width: 100%;\r\n            margin: auto;\r\n            background: #0000003b;\r\n            box-shadow: 7px 7px 9px -4px inset black;\r\n            height: calc(100% - 68px );\r\n            padding: 10px;\r\n            ul{\r\n                list-style: none;\r\n                padding-left: 10px;\r\n                position: relative;\r\n                &:before{\r\n                    content: '';\r\n                    left: -5px;\r\n                    position: absolute;\r\n                    top:-10px;\r\n                    height: 100%;\r\n                    width: 2px;\r\n                    background: white;\r\n                    z-index: 9;\r\n                }\r\n                &:nth-child(1){\r\n                    &:before{\r\n                        content: '';\r\n                        left: -5px;\r\n                        position: absolute;\r\n                        top:-10px;\r\n                        height: 0%;\r\n                        width: 2px;\r\n                        background: white;\r\n                        z-index: 9;\r\n                    }\r\n                }\r\n                li{\r\n                    cursor: pointer;\r\n                    user-select: none;\r\n                    width: 100%;\r\n                    flex-wrap: nowrap;\r\n                    flex-direction: row;\r\n                    list-style: none;\r\n                    position: relative;\r\n                    z-index: 10;\r\n                    min-height: 20px;\r\n                    transition: 0.5s;\r\n\r\n                    &:before{\r\n                        content: '';\r\n                        left: -5px;\r\n                        position: absolute;\r\n                        top:-10px;\r\n                        height: 100%;\r\n                        width: 2px;\r\n                        background: white;\r\n                        z-index: 9;\r\n                    }\r\n                    &:after{\r\n                        content: '';\r\n                        position: absolute;\r\n                        left: -5px;\r\n                        top:9px;\r\n                        height: 2px;\r\n                        width: 5px;\r\n                        background: white;\r\n                        z-index: 9;\r\n                    }\r\n                    &:nth-child(1){\r\n                        &:before{\r\n                            content: '';\r\n                            left: -5px;\r\n                            position: absolute;\r\n                            top:0px;\r\n                            height: calc(100% - 10px);\r\n                            width: 2px;\r\n                            background: white;\r\n                            z-index: 9;\r\n                        }\r\n                    }\r\n\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html.repositoryThree-pinned {\n  padding-left: 300px;\n}\n\nhtml {\n  min-height: 100vh;\n  transition: 0.5s;\n}\nhtml * {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\nhtml .repositoryThree {\n  height: 100vh;\n  position: fixed;\n  left: -300px;\n  right: 0;\n  width: 300px;\n  z-index: 1000;\n  background: rgba(13, 17, 23, 0.8784313725);\n  backdrop-filter: blur(2px);\n  box-shadow: rgba(0, 0, 0, 0) 5px -3px 13px;\n  transition: 0.5s;\n  padding: 15px 10px;\n}\nhtml .repositoryThree .settings {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  display: flex;\n  width: fit-content;\n}\nhtml .repositoryThree .settings > div {\n  cursor: pointer;\n}\nhtml .repositoryThree .settings .pin svg {\n  fill: white;\n  transition: 0.2s;\n  transform: rotate(45deg);\n}\nhtml .repositoryThree .settings .pin.pinned svg {\n  transform: rotate(0deg);\n}\nhtml .repositoryThree:before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  right: -10px;\n  height: 100vh;\n  width: 10px;\n}\nhtml .repositoryThree:after {\n  z-index: 998;\n  content: \"Three View\";\n  position: absolute;\n  top: 50%;\n  right: -40px;\n  height: 100px;\n  width: 40px;\n  align-items: center;\n  justify-content: center;\n  transform: translateY(-50%);\n  writing-mode: vertical-rl;\n  display: flex;\n  border-bottom-right-radius: 20px;\n  border-top-right-radius: 20px;\n  color: white;\n  border-right: 1px rgb(48, 54, 61) solid;\n  border-top: 1px rgb(48, 54, 61) solid;\n  border-bottom: 1px rgb(48, 54, 61) solid;\n  font-size: 18px;\n  padding: 10px 0;\n  opacity: 1;\n  background: rgb(22, 27, 34);\n  backdrop-filter: blur(2px);\n  box-shadow: rgba(0, 0, 0, 0) 5px -3px 13px;\n  transition: 0.5s;\n}\nhtml .repositoryThree:hover {\n  left: 0;\n  box-shadow: rgba(0, 0, 0, 0.3490196078) 5px -3px 13px;\n}\nhtml .repositoryThree:hover:after {\n  opacity: 0;\n  right: 260px;\n  transition: 0.5s;\n}\nhtml .repositoryThree.pinned {\n  left: 0;\n  box-shadow: rgba(0, 0, 0, 0.3490196078) 5px -3px 13px;\n}\nhtml .repositoryThree.pinned:after {\n  opacity: 0;\n}\nhtml .repositoryThree__header__title {\n  text-align: center;\n  margin: 20px;\n  font-size: 24px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  height: 28px;\n}\nhtml .repositoryThree__header input {\n  width: 100%;\n  border: 1px #363b42 solid;\n  border-radius: 5px;\n  padding: 0 10px;\n  height: 30px;\n  outline: none;\n  background: #21262d;\n  color: #c4ccd4;\n  margin-bottom: 10px;\n}\nhtml .repositoryThree__body {\n  width: 100%;\n  margin: auto;\n  background: rgba(0, 0, 0, 0.231372549);\n  box-shadow: 7px 7px 9px -4px inset black;\n  height: calc(100% - 68px - 40px);\n  padding: 10px;\n  overflow: scroll;\n}\nhtml .repositoryThree__body::-webkit-scrollbar {\n  width: 6px;\n  height: 6px;\n  background: transparent;\n}\nhtml .repositoryThree__body::-webkit-scrollbar-thumb {\n  background: black;\n  border-radius: 15px;\n}\nhtml .repositoryThree__body::-webkit-scrollbar-track {\n  background: transparent;\n}\nhtml .repositoryThree__body::-webkit-scrollbar-corner {\n  display: none;\n}\nhtml .repositoryThree__body ul {\n  list-style: none;\n  padding-left: 10px;\n  position: relative;\n}\nhtml .repositoryThree__body ul:before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: -10px;\n  height: 100%;\n  width: 2px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul:nth-child(1):before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: -10px;\n  height: 0%;\n  width: 2px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul li {\n  cursor: pointer;\n  user-select: none;\n  width: 100%;\n  flex-wrap: nowrap;\n  flex-direction: row;\n  list-style: none;\n  position: relative;\n  z-index: 10;\n  min-height: 20px;\n  transition: 0.5s;\n  white-space: nowrap;\n}\nhtml .repositoryThree__body ul li .folder {\n  text-decoration: none;\n  transition: 0.2s;\n  display: inline-block;\n  -webkit-tap-highlight-color: transparent;\n  outline: none;\n}\nhtml .repositoryThree__body ul li .folder:hover {\n  transform: rotate(10deg) scale(1.1);\n}\nhtml .repositoryThree__body ul li:before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: -10px;\n  height: 100%;\n  width: 2px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul li:after {\n  content: \"\";\n  position: absolute;\n  left: -5px;\n  top: 9px;\n  height: 2px;\n  width: 5px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body ul li:nth-child(1):before {\n  content: \"\";\n  left: -5px;\n  position: absolute;\n  top: 0px;\n  height: calc(100% - 10px);\n  width: 2px;\n  background: white;\n  z-index: 9;\n}\nhtml .repositoryThree__body li > ul {\n  height: 0;\n  overflow: hidden;\n  transform-origin: 0 0;\n  transition: 0.5s;\n}\nhtml .repositoryThree__body li.active > ul {\n  height: auto;\n}\nhtml .repositoryThree__body li.hiddenBySearch {\n  display: none;\n}", "",{"version":3,"sources":["webpack://./../src/Injects/repositoryThree/style.scss"],"names":[],"mappings":"AAAA;EACI,mBAAA;AACJ;;AAEA;EACI,iBAAA;EACA,gBAAA;AACJ;AAAI;EACI,sBAAA;EACA,SAAA;EACA,UAAA;AAER;AAAI;EAuBI,aAAA;EACA,eAAA;EACA,YAAA;EACA,QAAA;EACA,YAAA;EACA,aAAA;EACA,0CAAA;EACA,0BAAA;EACA,0CAAA;EACA,gBAAA;EACA,kBAAA;AApBR;AAZQ;EACI,kBAAA;EACA,SAAA;EACA,WAAA;EACA,aAAA;EACA,kBAAA;AAcZ;AAbY;EACI,eAAA;AAehB;AAZgB;EACI,WAAA;EACA,gBAAA;EACA,wBAAA;AAcpB;AAXoB;EACI,uBAAA;AAaxB;AAGQ;EACI,WAAA;EACA,kBAAA;EACA,MAAA;EACA,YAAA;EACA,aAAA;EACA,WAAA;AADZ;AAGQ;EACI,YAAA;EACA,qBAAA;EACA,kBAAA;EACA,QAAA;EACA,YAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,uBAAA;EACA,2BAAA;EACA,yBAAA;EACA,aAAA;EACA,gCAAA;EACA,6BAAA;EACA,YAAA;EACA,uCAAA;EACA,qCAAA;EACA,wCAAA;EACA,eAAA;EACA,eAAA;EACA,UAAA;EACA,2BAAA;EACA,0BAAA;EACA,0CAAA;EACA,gBAAA;AADZ;AAGQ;EACI,OAAA;EACA,qDAAA;AADZ;AAEY;EACI,UAAA;EACA,YAAA;EACA,gBAAA;AAAhB;AAGQ;EACI,OAAA;EACA,qDAAA;AADZ;AAEY;EACI,UAAA;AAAhB;AAIY;EACI,kBAAA;EACA,YAAA;EACA,eAAA;EACA,mBAAA;EACA,gBAAA;EACA,uBAAA;EACA,YAAA;AAFhB;AAIY;EACI,WAAA;EACA,yBAAA;EACA,kBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,cAAA;EACA,mBAAA;AAFhB;AAKQ;EACI,WAAA;EACA,YAAA;EACA,sCAAA;EACA,wCAAA;EACA,gCAAA;EACA,aAAA;EACA,gBAAA;AAHZ;AAIY;EACI,UAAA;EACA,WAAA;EACA,uBAAA;AAFhB;AAIY;EACI,iBAAA;EACA,mBAAA;AAFhB;AAIY;EACI,uBAAA;AAFhB;AAIY;EACI,aAAA;AAFhB;AAKY;EACI,gBAAA;EACA,kBAAA;EACA,kBAAA;AAHhB;AAIgB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,UAAA;EACA,YAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAFpB;AAKoB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,UAAA;EACA,UAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAHxB;AAMgB;EAWI,eAAA;EACA,iBAAA;EACA,WAAA;EACA,iBAAA;EACA,mBAAA;EACA,gBAAA;EACA,kBAAA;EACA,WAAA;EACA,gBAAA;EACA,gBAAA;EACA,mBAAA;AAdpB;AANoB;EACI,qBAAA;EACA,gBAAA;EACA,qBAAA;EACA,wCAAA;EACA,aAAA;AAQxB;AAPwB;EACI,mCAAA;AAS5B;AAKoB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,UAAA;EACA,YAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAHxB;AAKoB;EACI,WAAA;EACA,kBAAA;EACA,UAAA;EACA,QAAA;EACA,WAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAHxB;AAMwB;EACI,WAAA;EACA,UAAA;EACA,kBAAA;EACA,QAAA;EACA,yBAAA;EACA,UAAA;EACA,iBAAA;EACA,UAAA;AAJ5B;AAUY;EACI,SAAA;EACA,gBAAA;EACA,qBAAA;EACA,gBAAA;AARhB;AAUY;EACI,YAAA;AARhB;AAUY;EACI,aAAA;AARhB","sourcesContent":["html.repositoryThree-pinned{\r\n    padding-left: 300px;\r\n}\r\n\r\nhtml{\r\n    min-height: 100vh;\r\n    transition: 0.5s;\r\n    *{\r\n        box-sizing: border-box;\r\n        margin: 0;\r\n        padding: 0;\r\n    }\r\n    .repositoryThree{\r\n        .settings{\r\n            position: absolute;\r\n            top:10px;\r\n            right: 10px;\r\n            display: flex;\r\n            width: fit-content;\r\n            & > div{\r\n                cursor: pointer;\r\n            }\r\n            .pin{\r\n                svg{\r\n                    fill:white;\r\n                    transition: 0.2s;\r\n                    transform: rotate(45deg);\r\n                }\r\n                &.pinned{\r\n                    svg{\r\n                        transform: rotate(0deg);\r\n                    }\r\n                }\r\n            }\r\n        }\r\n        height: 100vh;\r\n        position: fixed;\r\n        left:-300px;\r\n        right: 0;\r\n        width: 300px;\r\n        z-index: 1000;\r\n        background: #0d1117e0;\r\n        backdrop-filter: blur(2px);\r\n        box-shadow: #00000000 5px -3px 13px;\r\n        transition: 0.5s;\r\n        padding: 15px 10px;\r\n        &:before{\r\n            content: \"\";\r\n            position: absolute;\r\n            top: 0;\r\n            right: -10px;\r\n            height: 100vh;\r\n            width: 10px;\r\n        }\r\n        &:after{\r\n            z-index: 998;\r\n            content: \"Three View\";\r\n            position: absolute;\r\n            top: 50%;\r\n            right: -40px;\r\n            height: 100px;\r\n            width: 40px;\r\n            align-items: center;\r\n            justify-content: center;\r\n            transform: translateY(-50%);\r\n            writing-mode: vertical-rl;\r\n            display: flex;\r\n            border-bottom-right-radius: 20px;\r\n            border-top-right-radius: 20px;\r\n            color: white;\r\n            border-right: 1px rgb(48, 54, 61) solid;\r\n            border-top: 1px rgb(48, 54, 61) solid;\r\n            border-bottom: 1px rgb(48, 54, 61) solid;\r\n            font-size: 18px;\r\n            padding: 10px 0;\r\n            opacity: 1;\r\n            background: rgb(22 27 34);\r\n            backdrop-filter: blur(2px);\r\n            box-shadow: rgba(0, 0, 0, 0) 5px -3px 13px;\r\n            transition: 0.5s;\r\n        }\r\n        &:hover{\r\n            left:0;\r\n            box-shadow: #00000059 5px -3px 13px;\r\n            &:after{\r\n                opacity: 0;\r\n                right: 260px;\r\n                transition: 0.5s;\r\n            }\r\n        }\r\n        &.pinned{\r\n            left: 0;\r\n            box-shadow: #00000059 5px -3px 13px;\r\n            &:after{\r\n                opacity: 0;\r\n            }\r\n        }\r\n        &__header{\r\n            &__title{\r\n                text-align: center;\r\n                margin: 20px;\r\n                font-size: 24px;\r\n                white-space: nowrap;\r\n                overflow: hidden;\r\n                text-overflow: ellipsis;\r\n                height: 28px;\r\n            }\r\n            input{\r\n                width: 100%;\r\n                border: 1px #363b42 solid;\r\n                border-radius: 5px;\r\n                padding: 0 10px;\r\n                height: 30px;\r\n                outline: none;\r\n                background: #21262d;\r\n                color:#c4ccd4;\r\n                margin-bottom: 10px;\r\n            }\r\n        }\r\n        &__body{\r\n            width: 100%;\r\n            margin: auto;\r\n            background: #0000003b;\r\n            box-shadow: 7px 7px 9px -4px inset black;\r\n            height: calc(100% - 68px - 40px);\r\n            padding: 10px;\r\n            overflow: scroll;\r\n            &::-webkit-scrollbar {\r\n                width: 6px;\r\n                height: 6px;\r\n                background: transparent;\r\n            }\r\n            &::-webkit-scrollbar-thumb{\r\n                background: black;\r\n                border-radius: 15px;\r\n            }\r\n            &::-webkit-scrollbar-track{\r\n                background: transparent;\r\n            }\r\n            &::-webkit-scrollbar-corner {\r\n                display: none;\r\n            }\r\n\r\n            ul{\r\n                list-style: none;\r\n                padding-left: 10px;\r\n                position: relative;\r\n                &:before{\r\n                    content: '';\r\n                    left: -5px;\r\n                    position: absolute;\r\n                    top:-10px;\r\n                    height: 100%;\r\n                    width: 2px;\r\n                    background: white;\r\n                    z-index: 9;\r\n                }\r\n                &:nth-child(1){\r\n                    &:before{\r\n                        content: '';\r\n                        left: -5px;\r\n                        position: absolute;\r\n                        top:-10px;\r\n                        height: 0%;\r\n                        width: 2px;\r\n                        background: white;\r\n                        z-index: 9;\r\n                    }\r\n                }\r\n                li{\r\n                    .folder {\r\n                        text-decoration: none;\r\n                        transition: 0.2s;\r\n                        display: inline-block;\r\n                        -webkit-tap-highlight-color: transparent;\r\n                        outline: none;\r\n                        &:hover{\r\n                            transform: rotate(10deg) scale(1.1);\r\n                        }\r\n                    }\r\n                    cursor: pointer;\r\n                    user-select: none;\r\n                    width: 100%;\r\n                    flex-wrap: nowrap;\r\n                    flex-direction: row;\r\n                    list-style: none;\r\n                    position: relative;\r\n                    z-index: 10;\r\n                    min-height: 20px;\r\n                    transition: 0.5s;\r\n                    white-space: nowrap;\r\n                    &:before{\r\n                        content: '';\r\n                        left: -5px;\r\n                        position: absolute;\r\n                        top:-10px;\r\n                        height: 100%;\r\n                        width: 2px;\r\n                        background: white;\r\n                        z-index: 9;\r\n                    }\r\n                    &:after{\r\n                        content: '';\r\n                        position: absolute;\r\n                        left: -5px;\r\n                        top:9px;\r\n                        height: 2px;\r\n                        width: 5px;\r\n                        background: white;\r\n                        z-index: 9;\r\n                    }\r\n                    &:nth-child(1){\r\n                        &:before{\r\n                            content: '';\r\n                            left: -5px;\r\n                            position: absolute;\r\n                            top:0px;\r\n                            height: calc(100% - 10px);\r\n                            width: 2px;\r\n                            background: white;\r\n                            z-index: 9;\r\n                        }\r\n                    }\r\n\r\n                }\r\n            }\r\n            li > ul{\r\n                height: 0;\r\n                overflow: hidden;\r\n                transform-origin: 0 0;\r\n                transition: 0.5s;\r\n            }\r\n            li.active > ul{\r\n                height: auto;\r\n            }\r\n            li.hiddenBySearch {\r\n                display: none;\r\n            }\r\n\r\n        }\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
