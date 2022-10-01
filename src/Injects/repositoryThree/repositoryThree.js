@@ -4,12 +4,16 @@ import $ from 'jquery'
 export default class{
     title
     url
+    hashedURL
     deep = 0
     toView= []
     maxDeep = 100
     deepAlerted = false
+    eventsAdded = false
     constructor(){
         this.checkurl()
+        this.hashedURL = window.location.toString().split('/').slice(0,5).join('/')
+        this.url = window.location.toString().split('/').slice(0,5).join('/')
     }
     uuidv4() {
         return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
@@ -56,7 +60,7 @@ export default class{
                         this.deep+=1
                         let id = this.uuidv4()
                         toReturn = `
-                                    <li id="${id}-parent">
+                                    <li id="${id}-parent" class="parent-li">
                                         <a href="${href}" class="folder">
                                         ${this.convertHtmlToString(svg)}
                                         </a>
@@ -68,8 +72,11 @@ export default class{
                                 `
                         $(parent).append(toReturn)
                         $('#'+id+'-parent').click((e)=>{
-                            e.stopPropagation()
-                            $('#'+id+'-parent').toggleClass('active')
+                            if (e.target === e.currentTarget){
+                                e.stopPropagation()
+                                $('#'+id+'-parent').toggleClass('active')
+                                this.hashTree($('.repositoryThree').html())
+                            }
                         })
 
                         fetch(href,{
@@ -92,6 +99,7 @@ export default class{
                         `
                         $(parent).append(toReturn)
                     }
+                    this.hashTree($('.repositoryThree').html())
                 })
             })
 
@@ -123,11 +131,60 @@ export default class{
         $('html').addClass('repositoryThree-pinned')
         localStorage.setItem('repositoryThree-pinned', true)
     }
+    hashTree(tree){
+        this.hashedURL = this.url
+        localStorage.setItem('repositoryThree-hash', tree)
+    }
+    checkhash(){
+        return window.location.toString().split('/').slice(0, 5).join('/') === this.hashedURL;
+    }
+    addClickEvent(){
+        // if (this.eventsAdded){
+        //     return
+        // }
+        this.eventsAdded = true
+        let liys = $('.parent-li')
+        $.each(liys,(index)=>{
+            liys[index].addEventListener('click',(e)=>{
+                if ((e.target !== liys[index]))
+                    return
+                e.stopPropagation()
+                liys[index].classList.toggle('active')
+                this.hashTree($('.repositoryThree').html())
+            })
+        })
+
+    }
+    build(repositoryThree){
+        $('.repositoryThree').remove()
+        $('html').prepend(repositoryThree)
+        $('#repositoryThree__search').on('input', (e)=>{
+            let value = $('#repositoryThree__search').val()
+            let liys = $('.repositoryThree__body li')
+            $.each(liys, (index)=>{
+                let text = liys[index].innerText
+                let li = liys[index]
+                if (text.includes(value)){
+                    $(li).removeClass('hiddenBySearch')
+                } else{
+                    $(li).addClass('hiddenBySearch')
+                }
+            })
+        })
+
+        this.proceed()
+    }
     inject(){
+        require('./style.scss')
         if (!this.checkThisIsRepo())
             return
+        if (this.checkhash()){
+            let tree = $("<div class='repositoryThree'>"+ localStorage.getItem('repositoryThree-hash')+ "</div>")
+            this.build(tree)
+            this.addClickEvent()
+            return;
+        }
         this.setup();
-        require('./style.scss')
         fetch(this.url,{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -163,24 +220,9 @@ export default class{
                     </div>
                 </div>
                 `);
-
                 this.getFolderOfFileInBlob(blob,'#main-ul-repositoryThree')
-                $('html').prepend(repositoryThree)
-                $('#repositoryThree__search').on('input', (e)=>{
-                    let value = $('#repositoryThree__search').val()
-                    let liys = $('.repositoryThree__body li')
-                    $.each(liys, (index)=>{
-                        let text = liys[index].innerText
-                        let li = liys[index]
-                        if (text.includes(value)){
-                            $(li).removeClass('hiddenBySearch')
-                        } else{
-                            $(li).addClass('hiddenBySearch')
-                        }
-                    })
-                })
+                this.build(repositoryThree)
 
-                this.proceed()
 
             })
 
@@ -193,7 +235,6 @@ export default class{
             $('.repositoryThree').remove()
             $('html').removeClass('repositoryThree-pinned')
         }
-
         setTimeout(()=>{
             this.checkurl()
         },1000)
