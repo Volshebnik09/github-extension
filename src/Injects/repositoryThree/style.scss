@@ -20,8 +20,14 @@ html{
             right: 10px;
             display: flex;
             width: fit-content;
+            gap: 10px;
             & > div{
                 cursor: pointer;
+            }
+            .reload{
+                svg{
+                    fill:white;
+                }
             }
             .pin{
                 svg{
