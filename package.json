@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently --kill-others \"serve -d dist\" \"gulp -f gulp/watchAndBuild.js\""
+    "dev": "gulp -f gulp/watchAndBuild.js"
   },
   "repository": {
     "type": "git",

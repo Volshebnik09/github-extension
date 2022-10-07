@@ -1,0 +1,52 @@
+doctype html
+html(lang="ru")
+    block head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="styles/options.css")
+        title github-ext
+        link(type="image/png" rel="shortcut icon" href='')
+        script(src='scripts/vendors.bundle.js' defer)
+        script(src='scripts/page__options.bundle.js' defer)
+    body
+        header
+            nav
+                ul
+                    li Настройка репозитория
+                    li Кредиты?!
+        main
+            .tab
+                .tab__group
+                    .tab__group__title
+                        | Скачивание папки
+                    label.tab__group__option(for="download-btn__enabled")
+                        input.tab__group__option__checkbox(type='checkbox' id="download-btn__enabled")
+                        .tab__group__option__title
+                            | Добавить кнопку на скачивание папки в репозитории?
+                .tab__group
+                    .tab__group__title
+                        | Управление tree view
+                    label.tab__group__option(for="Tree-View__enabled")
+                        input.tab__group__option__checkbox(type='checkbox' id="Tree-View__enabled")
+                        .tab__group__option__title
+                            | Включить Tree View?
+                    .tab__group__option
+                        input.tab__group__option__input(type='number'  id="Tree-View__depth" min="1" max="500" step="1")
+                        .tab__group__option__title
+                            | Кол-во просмотренных папок от этого зависит скорость загрузки
+                .tab__group
+                    .tab__group__title
+                        | Управление фиксами картинок в репозиториях
+                    label.tab__group__option(for="fix-img__enabled")
+                        input.tab__group__option__checkbox(type='checkbox' id="fix-img__enabled")
+                        .tab__group__option__title Убрать scroll-x
+                    .tab__group__option
+                        input.tab__group__option__input(type='number'  id="fix-img__height" max="9999")
+                        .tab__group__option__title Максимальная высота картинки, 0 - не ограниченная
+                .tab__title
+                    | настройки сохраняются автоматически, иногда требуется перезагрузить страницу
+            .tab
+                .tab__group
+                    .tab__group__title
+                        | Ага попался на кредит?

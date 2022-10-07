@@ -24,13 +24,16 @@ function buildPug () {
 }
 
 function buildCSS (){
-    return src(path.srcPath + '/styles/*.scss')
+    return src(path.srcPath + '/pages/*/*.scss')
         .pipe(sassGlob())
         .pipe(sass({
             outputStyle:'compressed',
         }).on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false,
+        }))
+        .pipe(rename(function (path){
+            path.dirname = ''
         }))
         .pipe(dest(path.distPath + '/styles'));
 }
@@ -81,7 +84,7 @@ exports.default= (cb) =>{
     copyOtherImg();
     copyPublic();
     watch(path.srcPath + '/**/*.pug',buildPug);
-    watch(path.srcPath + '/**/*.scss',buildCSS);
+    watch(path.srcPath + '/pages/*/*.scss',buildCSS);
     watch(path.srcPath +'/**/*.{png,jpeg}',transformPicture);
     watch(path.srcPath +'/**/*.{png,jpeg,ico}',copyOtherImg);
     watch('../src/public/**/*.*', copyPublic);

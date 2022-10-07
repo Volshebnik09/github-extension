@@ -26,6 +26,9 @@
       "js":["scripts/bootstrap.bundle.js","scripts/vendors.bundle.js"],
       "run_at": "document_end"
     }
-  ]
-
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
 }

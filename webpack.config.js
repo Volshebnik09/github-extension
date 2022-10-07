@@ -6,6 +6,8 @@ module.exports = {
   watch: true,
   entry: {
     bootstrap: "../src/bootstrap.js",
+    page__options: "../src/pages/options/page__options.js",
+    index: "../src/pages/index/index.js",
   },
   // plugins: [
   //   new BundleAnalyzerPlugin()

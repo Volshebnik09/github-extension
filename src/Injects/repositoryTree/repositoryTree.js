@@ -10,6 +10,7 @@ export default class{
     maxDeep = 100
     deepAlerted = false
     eventsAdded = false
+    enabled = true;
     settings = $(`<div class="settings">
                     <div class="reload">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,6 +38,17 @@ export default class{
                     </div>
                 </div>
 `)
+
+    inject(){
+        chrome.storage.sync.get({
+            "Tree-View__enabled":true,
+            "Tree-View__depth": 100,
+        },(items)=>{
+            this.enabled = items["Tree-View__enabled"]
+            this.maxDeep = items["Tree-View__depth"]
+            this.run()
+        })
+    }
     constructor(){
         this.checkurl()
         this.hashedURL = window.location.toString().split('/').slice(0,5).join('/')
@@ -102,7 +114,7 @@ export default class{
                             if (e.target === e.currentTarget){
                                 e.stopPropagation()
                                 $('#'+id+'-parent').toggleClass('active')
-                                this.hashTree($('.repositoryThree').html())
+                                this.hashTree($('.repositoryTree').html())
                             }
                         })
 
@@ -126,7 +138,7 @@ export default class{
                         `
                         $(parent).append(toReturn)
                     }
-                    this.hashTree($('.repositoryThree').html())
+                    this.hashTree($('.repositoryTree').html())
                 })
             })
 
@@ -139,37 +151,37 @@ export default class{
         return (tmp.innerHTML); // <p>Test</p>
     }
     proceed(){
-        if (localStorage.getItem('repositoryThree-pinned') === 'true'){
+        if (localStorage.getItem('repositoryTree-pinned') === 'true'){
             this.pin()
         }
-        $('.repositoryThree .settings .pin').click(()=>{
+        $('.repositoryTree .settings .pin').click(()=>{
             this.togglePin()
         })
-        $('.repositoryThree .settings .reload').click(()=>{
-            $('.repositoryThree').remove()
-            localStorage.removeItem('repositoryThree-hash/'+this.url, null)
+        $('.repositoryTree .settings .reload').click(()=>{
+            $('.repositoryTree').remove()
+            localStorage.removeItem('repositoryTree-hash/'+this.url, null)
             this.inject()
         })
     }
     togglePin(){
-        $('.repositoryThree .settings .pin').toggleClass('pinned')
-        $('.repositoryThree').toggleClass('pinned')
-        $('html').toggleClass('repositoryThree-pinned')
-        localStorage.setItem('repositoryThree-pinned', $('.repositoryThree').hasClass('pinned'))
+        $('.repositoryTree .settings .pin').toggleClass('pinned')
+        $('.repositoryTree').toggleClass('pinned')
+        $('html').toggleClass('repositoryTree-pinned')
+        localStorage.setItem('repositoryTree-pinned', $('.repositoryTree').hasClass('pinned'))
     }
     pin(){
-        $('.repositoryThree .settings .pin').addClass('pinned')
-        $('.repositoryThree').addClass('pinned')
-        $('html').addClass('repositoryThree-pinned')
-        localStorage.setItem('repositoryThree-pinned', true)
+        $('.repositoryTree .settings .pin').addClass('pinned')
+        $('.repositoryTree').addClass('pinned')
+        $('html').addClass('repositoryTree-pinned')
+        localStorage.setItem('repositoryTree-pinned', true)
     }
     hashTree(tree){
         this.hashedURL = this.url
-        localStorage.setItem('repositoryThree-hash/'+this.url, tree)
+        localStorage.setItem('repositoryTree-hash/'+this.url, tree)
     }
     checkhash(){
         this.url = window.location.toString().split('/').slice(0, 5).join('/')
-        return !!localStorage.getItem('repositoryThree-hash/'+this.url);
+        return !!localStorage.getItem('repositoryTree-hash/'+this.url);
     }
     addClickEvent(){
         // if (this.eventsAdded){
@@ -183,19 +195,19 @@ export default class{
                     return
                 e.stopPropagation()
                 liys[index].classList.toggle('active')
-                this.hashTree($('.repositoryThree').html())
+                this.hashTree($('.repositoryTree').html())
             })
         })
 
     }
-    build(repositoryThree){
-        $('.repositoryThree').remove()
-        $('html').prepend(repositoryThree)
-        if (!$('.repositoryThree .settings').length)
-            $('.repositoryThree').prepend(this.settings)
-        $('#repositoryThree__search').on('input', (e)=>{
-            let value = $('#repositoryThree__search').val()
-            let liys = $('.repositoryThree__body li')
+    build(repositoryTree){
+        $('.repositoryTree').remove()
+        $('html').prepend(repositoryTree)
+        if (!$('.repositoryTree .settings').length)
+            $('.repositoryTree').prepend(this.settings)
+        $('#repositoryTree__search').on('input', (e)=>{
+            let value = $('#repositoryTree__search').val()
+            let liys = $('.repositoryTree__body li')
             $.each(liys, (index)=>{
                 let text = liys[index].innerText
                 let li = liys[index]
@@ -209,13 +221,16 @@ export default class{
 
         this.proceed()
     }
-    inject(){
+    run(){
+        if(!this.enabled){
+            return
+        }
         require('./style.scss')
         if (!this.checkThisIsRepo())
             return
         if (this.checkhash()){
-            // console.log('loaded from hash')
-            let tree = $("<div class='repositoryThree'>"+ localStorage.getItem('repositoryThree-hash/'+this.url)+ "</div>")
+            console.log('loaded from hash')
+            let tree = $("<div class='repositoryTree'>"+ localStorage.getItem('repositoryTree-hash/'+this.url)+ "</div>")
             this.build(tree)
             this.addClickEvent()
             return;
@@ -228,22 +243,22 @@ export default class{
         })
             .then(res => res.blob())
             .then(async blob=>{
-                let repositoryThree = $(`
-                <div class="repositoryThree">
-                    <div class="repositoryThree__header">
-                         <div class="repositoryThree__header__title">
+                let repositoryTree = $(`
+                <div class="repositoryTree">
+                    <div class="repositoryTree__header">
+                         <div class="repositoryTree__header__title">
                             ${this.title}
                          </div>
-                         <input id="repositoryThree__search" type="text" placeholder="search"/>
+                         <input id="repositoryTree__search" type="text" placeholder="search"/>
                     </div>
-                    <div class="repositoryThree__body">
-                        <ul id="main-ul-repositoryThree">
+                    <div class="repositoryTree__body">
+                        <ul id="main-ul-repositoryTree">
                         </ul>
                     </div>
                 </div>
                 `);
-                this.getFolderOfFileInBlob(blob,'#main-ul-repositoryThree')
-                this.build(repositoryThree)
+                this.getFolderOfFileInBlob(blob,'#main-ul-repositoryTree')
+                this.build(repositoryTree)
 
 
             })
@@ -254,8 +269,8 @@ export default class{
 
     checkurl(){
         if (window.location.toString().split('/').slice(0, 5).join('/') !== this.url){
-            $('.repositoryThree').remove()
-            $('html').removeClass('repositoryThree-pinned')
+            $('.repositoryTree').remove()
+            $('html').removeClass('repositoryTree-pinned')
         }
         setTimeout(()=>{
             this.checkurl()
