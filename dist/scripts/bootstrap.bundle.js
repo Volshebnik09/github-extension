@@ -28,11 +28,37 @@ var _default = /*#__PURE__*/function () {
   }
 
   _createClass(_default, [{
-    key: "run",
-    value: function run(height) {
+    key: "fixHeightAndWidth",
+    value: function fixHeightAndWidth(height) {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('head').append("\n        <style>\n        #repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img {\n          max-width: 100%;\n          max-height: ".concat(height, "; \n        }\n        </style>\n        "));
+    }
+  }, {
+    key: "pictureFullSize",
+    value: function pictureFullSize() {
       __webpack_require__(/*! ./style.scss */ "../src/Injects/FixImageWidth/style.scss");
 
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('head').append("\n        <style>\n        #repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img {\n          max-width: 100%;\n          max-height: ".concat(height, ";\n        }\n        </style>\n\n        "));
+      var body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
+      var imgHolderMain = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center');
+      var img = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img');
+      var fullScreenBtn = jquery__WEBPACK_IMPORTED_MODULE_0___default()("\n            <svg id=\"fullScreenBtn-FixImg\" width=\"128\" height=\"128\" viewBox=\"0 0 128 128\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <path d=\"M35.2 25.6C32.6539 25.6 30.2121 26.6114 28.4118 28.4118C26.6114 30.2121 25.6 32.6539 25.6 35.2V41.6C25.6 42.4487 25.2629 43.2626 24.6627 43.8627C24.0626 44.4629 23.2487 44.8 22.4 44.8C21.5513 44.8 20.7374 44.4629 20.1373 43.8627C19.5371 43.2626 19.2 42.4487 19.2 41.6V35.2C19.2 30.9565 20.8857 26.8869 23.8863 23.8863C26.8869 20.8857 30.9565 19.2 35.2 19.2H41.6C42.4487 19.2 43.2626 19.5371 43.8627 20.1373C44.4629 20.7374 44.8 21.5513 44.8 22.4C44.8 23.2487 44.4629 24.0626 43.8627 24.6627C43.2626 25.2629 42.4487 25.6 41.6 25.6H35.2ZM102.4 35.2C102.4 32.6539 101.389 30.2121 99.5882 28.4118C97.7879 26.6114 95.3461 25.6 92.8 25.6H86.4C85.5513 25.6 84.7374 25.2629 84.1373 24.6627C83.5371 24.0626 83.2 23.2487 83.2 22.4C83.2 21.5513 83.5371 20.7374 84.1373 20.1373C84.7374 19.5371 85.5513 19.2 86.4 19.2H92.8C97.0435 19.2 101.113 20.8857 104.114 23.8863C107.114 26.8869 108.8 30.9565 108.8 35.2V41.6C108.8 42.4487 108.463 43.2626 107.863 43.8627C107.263 44.4629 106.449 44.8 105.6 44.8C104.751 44.8 103.937 44.4629 103.337 43.8627C102.737 43.2626 102.4 42.4487 102.4 41.6V35.2ZM102.4 92.8C102.4 95.3461 101.389 97.7879 99.5882 99.5882C97.7879 101.389 95.3461 102.4 92.8 102.4H86.4C85.5513 102.4 84.7374 102.737 84.1373 103.337C83.5371 103.937 83.2 104.751 83.2 105.6C83.2 106.449 83.5371 107.263 84.1373 107.863C84.7374 108.463 85.5513 108.8 86.4 108.8H92.8C97.0435 108.8 101.113 107.114 104.114 104.114C107.114 101.113 108.8 97.0435 108.8 92.8V86.4C108.8 85.5513 108.463 84.7374 107.863 84.1373C107.263 83.5371 106.449 83.2 105.6 83.2C104.751 83.2 103.937 83.5371 103.337 84.1373C102.737 84.7374 102.4 85.5513 102.4 86.4V92.8ZM25.6 92.8C25.6 95.3461 26.6114 97.7879 28.4118 99.5882C30.2121 101.389 32.6539 102.4 35.2 102.4H43.2C44.0487 102.4 44.8626 102.737 45.4627 103.337C46.0629 103.937 46.4 104.751 46.4 105.6C46.4 106.449 46.0629 107.263 45.4627 107.863C44.8626 108.463 44.0487 108.8 43.2 108.8H35.2C30.9565 108.8 26.8869 107.114 23.8863 104.114C20.8857 101.113 19.2 97.0435 19.2 92.8V84.8C19.2 83.9513 19.5371 83.1374 20.1373 82.5373C20.7374 81.9371 21.5513 81.6 22.4 81.6C23.2487 81.6 24.0626 81.9371 24.6627 82.5373C25.2629 83.1374 25.6 83.9513 25.6 84.8V92.8ZM54.4 44.8C51.8539 44.8 49.4121 45.8114 47.6118 47.6118C45.8114 49.4121 44.8 51.8539 44.8 54.4V73.6C44.8 76.1461 45.8114 78.5879 47.6118 80.3882C49.4121 82.1886 51.8539 83.2 54.4 83.2H73.6C76.1461 83.2 78.5879 82.1886 80.3882 80.3882C82.1886 78.5879 83.2 76.1461 83.2 73.6V54.4C83.2 51.8539 82.1886 49.4121 80.3882 47.6118C78.5879 45.8114 76.1461 44.8 73.6 44.8H54.4ZM51.2 54.4C51.2 53.5513 51.5371 52.7374 52.1373 52.1373C52.7374 51.5371 53.5513 51.2 54.4 51.2H73.6C74.4487 51.2 75.2626 51.5371 75.8627 52.1373C76.4629 52.7374 76.8 53.5513 76.8 54.4V73.6C76.8 74.4487 76.4629 75.2626 75.8627 75.8627C75.2626 76.4629 74.4487 76.8 73.6 76.8H54.4C53.5513 76.8 52.7374 76.4629 52.1373 75.8627C51.5371 75.2626 51.2 74.4487 51.2 73.6V54.4Z\" fill=\"white\"/>\n            </svg>\n        ");
+      imgHolderMain.append(fullScreenBtn);
+      var fullScreenImg = img.clone();
+
+      if (localStorage.getItem("fullScreenImg__open") === "true") {
+        fullScreenImg.addClass('active');
+      }
+
+      fullScreenImg.addClass('fullScreenImg-FixImg');
+      body.bind('click', function () {
+        fullScreenImg.removeClass('active');
+        localStorage.setItem("fullScreenImg__open", "false");
+      });
+      body.prepend(fullScreenImg);
+      fullScreenBtn.bind('click', function (e) {
+        e.stopPropagation();
+        fullScreenImg.addClass('active');
+        localStorage.setItem("fullScreenImg__open", "true");
+      });
     }
   }, {
     key: "inject",
@@ -41,12 +67,17 @@ var _default = /*#__PURE__*/function () {
 
       chrome.storage.sync.get({
         "fix-img__enabled": true,
-        "fix-img__height": 450
+        "fix-img__height": 450,
+        "fix-img-fullscreen__enabled": true
       }, function (items) {
         if (items["fix-img__enabled"]) {
           var height = parseInt(items["fix-img__height"]) === 0 ? 'unset' : items["fix-img__height"] + 'px';
 
-          _this.run(height);
+          _this.fixHeightAndWidth(height);
+        }
+
+        if (items["fix-img-fullscreen__enabled"]) {
+          _this.pictureFullSize();
         }
       });
     }
@@ -950,7 +981,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img {\n  max-width: 100%;\n}", "",{"version":3,"sources":["webpack://./../src/Injects/FixImageWidth/style.scss"],"names":[],"mappings":"AAAA;EACE,eAAA;AACF","sourcesContent":["#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img {\r\n  max-width: 100%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center {\n  position: relative;\n  overflow: hidden;\n}\n\n#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img {\n  transition: 0.2s;\n  filter: brightness(1);\n}\n\n#fullScreenBtn-FixImg {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  cursor: pointer;\n  transition: 0.2s;\n  opacity: 0;\n  max-width: 128px;\n  max-height: 128px;\n  height: 100%;\n  width: 100%;\n}\n\n#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center:hover img {\n  filter: brightness(0.4);\n}\n#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center:hover #fullScreenBtn-FixImg {\n  opacity: 1;\n}\n\n.fullScreenImg-FixImg {\n  position: fixed;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  max-width: calc(100vw - 300px - 40px);\n  max-height: calc(100vh - 40px);\n  z-index: 999;\n  transition: 0.5s;\n  opacity: 0;\n  top: -100%;\n  box-shadow: rgba(0, 0, 0, 0.7803921569) 0px 0px 1000px 1000px;\n  cursor: pointer;\n  background: black;\n}\n\n.repositoryTree.pinned ~ body .fullScreenImg-FixImg {\n  left: calc(150px + 50%);\n  transform: translate(-50%, -50%);\n}\n\n.fullScreenImg-FixImg.active {\n  top: 50%;\n  opacity: 1;\n}", "",{"version":3,"sources":["webpack://./../src/Injects/FixImageWidth/style.scss"],"names":[],"mappings":"AAAA;EACE,kBAAA;EACA,gBAAA;AACF;;AACA;EACE,gBAAA;EACA,qBAAA;AAEF;;AACA;EACE,kBAAA;EACA,QAAA;EACA,SAAA;EACA,gCAAA;EACA,eAAA;EACA,gBAAA;EACA,UAAA;EACA,gBAAA;EACA,iBAAA;EACA,YAAA;EACA,WAAA;AAEF;;AAEE;EACE,uBAAA;AACJ;AACE;EACE,UAAA;AACJ;;AAEA;EACE,eAAA;EACA,SAAA;EACA,gCAAA;EACA,qCAAA;EACA,8BAAA;EACA,YAAA;EACA,gBAAA;EACA,UAAA;EACA,UAAA;EACA,6DAAA;EACA,eAAA;EACA,iBAAA;AACF;;AACA;EACE,uBAAA;EACA,gCAAA;AAEF;;AAAA;EACE,QAAA;EACA,UAAA;AAGF","sourcesContent":["#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center{\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img{\r\n  transition: 0.2s;\r\n  filter: brightness(1);\r\n}\r\n\r\n#fullScreenBtn-FixImg{\r\n  position:absolute;\r\n  top:50%;\r\n  left:50%;\r\n  transform: translate(-50%,-50%);\r\n  cursor:pointer;\r\n  transition:0.2s;\r\n  opacity:0;\r\n  max-width: 128px;\r\n  max-height: 128px;\r\n  height: 100%;\r\n  width: 100%;\r\n}\r\n\r\n#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center:hover{\r\n  img{\r\n    filter: brightness(0.4);\r\n  }\r\n  #fullScreenBtn-FixImg{\r\n    opacity:1\r\n  }\r\n}\r\n.fullScreenImg-FixImg{\r\n  position: fixed;\r\n  left: 50%;\r\n  transform: translate(-50%,-50%);\r\n  max-width: calc(100vw - 300px - 40px);\r\n  max-height: calc(100vh - 40px);\r\n  z-index: 999;\r\n  transition: 0.5s;\r\n  opacity: 0;\r\n  top:-100%;\r\n  box-shadow: #000000c7 0px 0px 1000px 1000px;\r\n  cursor: pointer;\r\n  background: black;\r\n}\r\n.repositoryTree.pinned ~ body .fullScreenImg-FixImg{\r\n  left: calc(150px + 50%);\r\n  transform: translate(-50%,-50%);\r\n}\r\n.fullScreenImg-FixImg.active{\r\n  top:50%;\r\n  opacity: 1;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

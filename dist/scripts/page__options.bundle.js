@@ -18,7 +18,8 @@ var opt = {
   "Tree-View__enabled": jquery__WEBPACK_IMPORTED_MODULE_0___default()("#Tree-View__enabled")[0],
   "Tree-View__depth": jquery__WEBPACK_IMPORTED_MODULE_0___default()("#Tree-View__depth")[0],
   "fix-img__enabled": jquery__WEBPACK_IMPORTED_MODULE_0___default()("#fix-img__enabled")[0],
-  "fix-img__height": jquery__WEBPACK_IMPORTED_MODULE_0___default()("#fix-img__height")[0]
+  "fix-img__height": jquery__WEBPACK_IMPORTED_MODULE_0___default()("#fix-img__height")[0],
+  "fix-img-fullscreen__enabled": jquery__WEBPACK_IMPORTED_MODULE_0___default()("#fix-img-fullscreen__enabled")[0]
 };
 options.each(function (index) {
   var input = options[index].querySelector('input.tab__group__option__input');
@@ -54,7 +55,8 @@ function load() {
     "Tree-View__enabled": true,
     "Tree-View__depth": 100,
     "fix-img__enabled": true,
-    "fix-img__height": 450
+    "fix-img__height": 450,
+    "fix-img-fullscreen__enabled": true
   }, function (items) {
     for (var itemsKey in items) {
       opt[itemsKey].checked = items[itemsKey];

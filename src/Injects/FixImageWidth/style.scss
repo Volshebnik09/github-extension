@@ -1,3 +1,53 @@
-#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img {
-  max-width: 100%;
+#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center{
+  position: relative;
+  overflow: hidden;
+}
+#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center img{
+  transition: 0.2s;
+  filter: brightness(1);
+}
+
+#fullScreenBtn-FixImg{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  cursor:pointer;
+  transition:0.2s;
+  opacity:0;
+  max-width: 128px;
+  max-height: 128px;
+  height: 100%;
+  width: 100%;
+}
+
+#repo-content-pjax-container > div > div > div.Box.mt-3 .text-center:hover{
+  img{
+    filter: brightness(0.4);
+  }
+  #fullScreenBtn-FixImg{
+    opacity:1
+  }
+}
+.fullScreenImg-FixImg{
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: calc(100vw - 300px - 40px);
+  max-height: calc(100vh - 40px);
+  z-index: 999;
+  transition: 0.5s;
+  opacity: 0;
+  top:-100%;
+  box-shadow: #000000c7 0px 0px 1000px 1000px;
+  cursor: pointer;
+  background: black;
+}
+.repositoryTree.pinned ~ body .fullScreenImg-FixImg{
+  left: calc(150px + 50%);
+  transform: translate(-50%,-50%);
+}
+.fullScreenImg-FixImg.active{
+  top:50%;
+  opacity: 1;
 }

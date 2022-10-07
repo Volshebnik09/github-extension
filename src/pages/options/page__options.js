@@ -7,6 +7,7 @@ let opt = {
     "Tree-View__depth" : $("#Tree-View__depth")[0],
     "fix-img__enabled": $("#fix-img__enabled")[0],
     "fix-img__height": $("#fix-img__height")[0],
+    "fix-img-fullscreen__enabled": $("#fix-img-fullscreen__enabled")[0]
 }
 options.each((index)=>{
     let input = options[index].querySelector('input.tab__group__option__input')
@@ -44,6 +45,7 @@ function load(){
         "Tree-View__depth": 100,
         "fix-img__enabled": true,
         "fix-img__height":450,
+        "fix-img-fullscreen__enabled":true,
     }, (items)=>{
         for (let itemsKey in items) {
             opt[itemsKey].checked = items[itemsKey]

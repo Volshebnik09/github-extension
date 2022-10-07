@@ -34,7 +34,7 @@
           </label>
           <div class="tab__group__option">
             <input class="tab__group__option__input" type="number" id="Tree-View__depth" min="1" max="500" step="1">
-            <div class="tab__group__option__title">Кол-во просмотренных папок от этого зависит скорость загрузки</div>
+            <div class="tab__group__option__title">Кол-во просмотренных папок от этого зависит скорость загрузки<span class="red"> требуются нажать на кнопку reload в Tree view</span></div>
           </div>
         </div>
         <div class="tab__group">
@@ -47,6 +47,10 @@
             <input class="tab__group__option__input" type="number" id="fix-img__height" max="9999">
             <div class="tab__group__option__title">Максимальная высота картинки, 0 - не ограниченная</div>
           </div>
+          <label class="tab__group__option" for="fix-img-fullscreen__enabled">
+            <input class="tab__group__option__checkbox" type="checkbox" id="fix-img-fullscreen__enabled">
+            <div class="tab__group__option__title">Добавить кнопку расскрытия на полный экран</div>
+          </label>
         </div>
         <div class="tab__title">настройки сохраняются автоматически, иногда требуется перезагрузить страницу</div>
       </div>

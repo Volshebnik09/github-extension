@@ -35,6 +35,7 @@ html(lang="ru")
                         input.tab__group__option__input(type='number'  id="Tree-View__depth" min="1" max="500" step="1")
                         .tab__group__option__title
                             | Кол-во просмотренных папок от этого зависит скорость загрузки
+                            span.red  требуются нажать на кнопку reload в Tree view
                 .tab__group
                     .tab__group__title
                         | Управление фиксами картинок в репозиториях
@@ -44,6 +45,9 @@ html(lang="ru")
                     .tab__group__option
                         input.tab__group__option__input(type='number'  id="fix-img__height" max="9999")
                         .tab__group__option__title Максимальная высота картинки, 0 - не ограниченная
+                    label.tab__group__option(for="fix-img-fullscreen__enabled")
+                        input.tab__group__option__checkbox(type='checkbox' id="fix-img-fullscreen__enabled")
+                        .tab__group__option__title Добавить кнопку расскрытия на полный экран
                 .tab__title
                     | настройки сохраняются автоматически, иногда требуется перезагрузить страницу
             .tab
