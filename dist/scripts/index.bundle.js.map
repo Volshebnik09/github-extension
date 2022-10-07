@@ -1,0 +1,1 @@
+{"version":3,"file":"scripts/index.bundle.js","mappings":";;;;;AAAAA,MAAM,CAACC,OAAP,CAAeC,WAAf,CAA2B;EACnB,OAAM;AADa,CAA3B,EAEM,YAAI,CACT,CAHD,E","sources":["webpack:///../src/pages/index/index.js"],"sourcesContent":["chrome.runtime.sendMessage({\r\n        'kek':'kek'\r\n    },()=>{\r\n})"],"names":["chrome","runtime","sendMessage"],"sourceRoot":""}

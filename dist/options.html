@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/options.css">
+  <title>github-ext</title>
+  <link type="image/png" rel="shortcut icon" href="">
+  <script src="scripts/vendors.bundle.js" defer></script>
+  <script src="scripts/page__options.bundle.js" defer></script>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Настройка репозитория</li>
+          <li>Кредиты?!</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="tab">
+        <div class="tab__group">
+          <div class="tab__group__title">Скачивание папки</div>
+          <label class="tab__group__option" for="download-btn__enabled">
+            <input class="tab__group__option__checkbox" type="checkbox" id="download-btn__enabled">
+            <div class="tab__group__option__title">Добавить кнопку на скачивание папки в репозитории?</div>
+          </label>
+        </div>
+        <div class="tab__group">
+          <div class="tab__group__title">Управление tree view</div>
+          <label class="tab__group__option" for="Tree-View__enabled">
+            <input class="tab__group__option__checkbox" type="checkbox" id="Tree-View__enabled">
+            <div class="tab__group__option__title">Включить Tree View?</div>
+          </label>
+          <div class="tab__group__option">
+            <input class="tab__group__option__input" type="number" id="Tree-View__depth" min="1" max="500" step="1">
+            <div class="tab__group__option__title">Кол-во просмотренных папок от этого зависит скорость загрузки</div>
+          </div>
+        </div>
+        <div class="tab__group">
+          <div class="tab__group__title">Управление фиксами картинок в репозиториях</div>
+          <label class="tab__group__option" for="fix-img__enabled">
+            <input class="tab__group__option__checkbox" type="checkbox" id="fix-img__enabled">
+            <div class="tab__group__option__title">Убрать scroll-x</div>
+          </label>
+          <div class="tab__group__option">
+            <input class="tab__group__option__input" type="number" id="fix-img__height" max="9999">
+            <div class="tab__group__option__title">Максимальная высота картинки, 0 - не ограниченная</div>
+          </div>
+        </div>
+        <div class="tab__title">настройки сохраняются автоматически, иногда требуется перезагрузить страницу</div>
+      </div>
+      <div class="tab">
+        <div class="tab__group">
+          <div class="tab__group__title">Ага попался на кредит?</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
